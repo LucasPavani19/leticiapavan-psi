@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Psicóloga Letícia Pavan - Especialista em TEA. Atendimento infantil com abordagem lúdica e personalizada. Agende sua consulta.">
+    <meta name="keywords" content="psicólogo infantil, TEA, autismo, desenvolvimento infantil, terapia infantil">
+    <title>Letícia Pavan | Psicóloga Especialista em TEA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Psicóloga Letícia Pavan</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="por-que-acompanhar.html">Por que acompanhar?</a></li>
+              
+                <li><a href="#sobre">Sobre mim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="carousel" role="region" aria-label="Galeria de imagens">
+            <div class="carousel-images" aria-live="polite">
+                <img src="img/fundo01.png" alt="Fundo marmore" class="carousel-image active">
+                <img src="img/fundo02.png" alt="Fundo marmore" class="carousel-image">
+                <img src="img/fundo03.png" alt="Fundo marmore" class="carousel-image">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Acolhimento e Desenvolvimento</h1>
+            <p>Atendimento psicológico especializado para crianças com Transtorno do Espectro Autista (TEA). 
+               Um espaço seguro e acolhedor onde cada criança é única e especial, 
+               com acompanhamento personalizado para desenvolvimento pleno.</p>
+            <div class="hero-buttons">
+                <a href="por-que-acompanhar.html" class="btn-primary">Por que acompanhar?</a>
+                <a href="#sobre" class="btn-secondary">Sobre mim</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-container" id="servicos">
+        <h2 class="section-title">Planos de Acompanhamento</h2>
+        <div class="services-grid">
+            <div class="service-card" data-service="Sessão Individual" data-price="90,00">
+                <div class="service-icon">🧩</div>
+                <h3>Sessão Individual</h3>
+                <p>Atendimento personalizado com duração de 50 minutos, focado nas necessidades específicas da criança.
+                   Inclui avaliação contínua e orientação aos pais.</p>
+                <div class="price">R$ 90,00</div>
+                <button class="select-service">Agendar Consulta</button>
+            </div>
+
+            <div class="service-card featured" data-service="Pacote Mensal" data-price="320,00">
+                <div class="service-icon">🌟</div>
+                <h3>Pacote Mensal</h3>
+                <p>4 sessões mensais com acompanhamento contínuo, relatório de desenvolvimento
+                   e suporte via WhatsApp para dúvidas entre as sessões.</p>
+                <div class="price">R$ 320,00</div>
+                <div class="price-detail">Economia de R$ 40,00</div>
+                <button class="select-service">Agendar Consulta</button>
+            </div>
+        </div>
+
+        <!-- Formulário de Agendamento -->
+        <div class="booking-form" id="bookingForm">
+            <h3>Agendar Consulta</h3>
+            <p class="selected-service-info">Tratamento selecionado: <span id="selectedService">Nenhum selecionado</span></p>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="name">Nome completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" 
+                           pattern="[0-9]{11}" 
+                           placeholder="11 999999999"
+                           required>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-primary">Solicitar Agendamento via WhatsApp</button>
+                </div>
+               
+                <p class="consent-text">Ao continuar, você aceita que os dados fornecidos serão utilizados para contato, agendamento de consultas e envio de comunicações importantes.</p>
+            </form>
+        </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+        <img src="img/01.png" alt="Psicóloga Letícia Pavan" class="profile-img">
+        <div class="about-content">
+            <h2>Sobre mim</h2>
+            <p>Desde muito jovem, sempre tive uma conexão especial com crianças. Foi durante meu trabalho voluntário 
+               em uma instituição de apoio a famílias com crianças autistas que descobri minha verdadeira vocação. 
+               A psicologia infantil me permitiu unir minha paixão por ajudar com meu amor pelo universo único de cada criança.</p>
+            
+            <p>Especialista em Psicologia do Desenvolvimento com foco em Transtorno do Espectro Autista (TEA), 
+               dedico minha prática ao acompanhamento terapêutico de crianças e suas famílias, criando um espaço 
+               onde cada pequeno pode se desenvolver em seu próprio ritmo.</p>
+
+            <ul style="list-style: none; padding-left: 0;">
+                <li>- Especialização em TEA e Desenvolvimento Infantil</li>
+                <li>- Abordagem lúdica e integrativa</li>
+                <li>- Experiência com diferentes níveis do espectro</li>
+                <li>- Suporte contínuo às famílias</li>
+            </ul>
+
+            <p>Meu compromisso é proporcionar um ambiente seguro e acolhedor, onde cada criança possa 
+               desenvolver seu potencial único, respeitando seu próprio tempo e características.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>
+                <a href="https://www.instagram.com/leticiapavaan.psi" 
+                   class="social-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img width="24" height="24" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"/> @leticiapavaan.psi
+                </a>
+            </p>
+            <div class="footer-divider"></div>
+            <p>© 2025 Psicóloga Letícia Pavan | Psicóloga Especialista em TEA | CRP: 18/8701</p>
+            <div class="footer-divider"></div>
+            <p>Site desenvolvido por: 
+                <a href="https://lucaspavani.netlify.app/" 
+                   target="_blank" 
+                   rel="noopener noreferrer">Lucas Pavani</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Adicionar o script do EmailJS antes do seu script.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Inicializar o EmailJS com sua Public Key -->
+    <script type="text/javascript">
+       (function() {
+          emailjs.init("afwYf6RRsIfuFTf3U"); // Substitua pela sua chave pública do EmailJS
+       })();
+    </script>
+
+    <!-- Adicionar o script antes do fechamento do body -->
+    <script src="script.js"></script>
+
+    <!-- Adicionar validações extras no formulário -->
+    <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validar formato do telefone
+        const whatsapp = document.getElementById('whatsapp').value;
+        if (!/^[0-9]{11}$/.test(whatsapp)) {
+            alert('Por favor, insira um número de WhatsApp válido');
+            return;
+        }
+        
+        // Validar nome (mínimo 3 caracteres)
+        const name = document.getElementById('name').value;
+        if (name.length < 3) {
+            alert('Por favor, insira um nome válido');
+            return;
+        }
+
+        // ... resto do código
+    });
+    </script>
+
+    <script>
+        function startCarousel() {
+            const images = document.querySelectorAll('.carousel-image');
+            let currentIndex = 0;
+
+            // Garante que a primeira imagem está visível
+            images[0].classList.add('active');
+
+            setInterval(() => {
+                // Remove a classe active da imagem atual
+                images[currentIndex].classList.remove('active');
+                
+                // Atualiza o índice para a próxima imagem
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Adiciona a classe active na próxima imagem
+                images[currentIndex].classList.add('active');
+                
+                console.log('Mudando para imagem:', currentIndex); // Debug
+            }, 3000); // Muda a cada 3 segundos
+        }
+
+        // Inicia o carrossel quando a página carregar
+        window.addEventListener('load', startCarousel);
+    </script>
+</body>
+</html>

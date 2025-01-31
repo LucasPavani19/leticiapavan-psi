@@ -1,0 +1,1595 @@
+/* Variáveis otimizadas para acessibilidade */
+:root {
+    --primary: #5B9BD5;    /* Azul mais acessível */
+    --light-primary: #B8E2F2;
+    --dark-primary: #4A7DAC;
+    --text: #333333;       /* Melhor contraste */
+    --white: #FFFFFF;
+    --light-gray: #F8F8F8;
+    --dark-gray: #4A4A4A;
+    --overlay: rgba(0, 0, 0, 0.5);
+    scroll-padding-top: 120px; /* Aumenta o espaço do scroll ao clicar nos links */
+    scroll-behavior: smooth; /* Garante scroll suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--white);
+}
+
+/* Header com layout vertical centralizado */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    padding: 0.8rem 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Remover estilos da logo */
+.logo-placeholder, .logo-image {
+    display: none;
+}
+
+/* Adicionar estilo para o título do header */
+.header-title {
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+/* Ajustar navegação */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    header {
+        padding: 0.6rem 1rem;
+    }
+
+    .header-title {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+}
+
+/* Mantendo o ajuste do scroll offset */
+:root {
+    scroll-padding-top: 120px;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    :root {
+        scroll-padding-top: 100px;
+    }
+    
+    header {
+        padding: 1rem;
+    }
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), var(--overlay)), url('path/to/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    margin-top: 60px;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(transparent, var(--white));
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    line-height: 1.2;
+}
+
+.hero h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: var(--primary);
+    margin: 20px auto;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--white);
+    max-width: min(800px, 90%);
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 250px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--text);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    background: var(--light-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Seção Serviços */
+.services-container {
+    padding: 5rem 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--dark-gray);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 4rem auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    max-width: 1200px;
+}
+
+.service-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 3rem 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(124, 185, 232, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(124, 185, 232, 0.2);
+    border-color: var(--primary);
+}
+
+.service-card h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+    font-size: 1.6rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.service-card p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.price-detail {
+    color: #28a745;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.select-service {
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+}
+
+.select-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(91, 155, 213, 0.3);
+    background-color: var(--dark-primary);
+}
+
+/* Botão laranja apenas para pacote mensal */
+.service-card.featured .select-service {
+    background-color: orange;
+}
+
+.service-card.featured .select-service:hover {
+    background-color: #ff8c00;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+/* Centralização dos textos do formulário */
+.selected-service-info {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-primary);
+    width: 100%;
+    display: block;
+}
+
+.consent-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 1.5rem;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .selected-service-info {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+    
+    .consent-text {
+        font-size: 0.7rem;
+        padding: 0 0.5rem;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Adicionar animação suave ao formulário */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.booking-form.active {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 5%;
+        gap: 0.5rem;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: min(100%, 300px);
+        max-width: 300px;
+        margin: 2.5rem auto 0;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        min-width: unset;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .booking-form {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 1.2rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-content p {
+        font-size: 0.9rem;
+    }
+
+    .about-content li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .service-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .price {
+        font-size: 1.2rem;
+        padding: 6px 15px;
+    }
+
+    .about-section {
+        padding: 3rem 1rem;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Ajustes para telas muito grandes */
+@media (min-width: 1440px) {
+    .hero-content {
+        max-width: 1200px;
+    }
+
+    .services-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .about-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+    }
+}
+
+/* Melhorando a visualização em dispositivos com notch */
+@supports (padding: env(safe-area-inset-top)) {
+    .hero {
+        padding-top: calc(env(safe-area-inset-top) + 4rem);
+    }
+}
+
+/* Otimizando carregamento de imagens */
+.carousel-image {
+    will-change: opacity;
+    content-visibility: auto;
+}
+
+/* Melhorando acessibilidade em telas pequenas */
+@media (max-width: 360px) {
+    .header-title {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .select-service {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .about-content p, 
+    .about-content li {
+        font-size: 0.85rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustes para telas muito estreitas */
+@media (max-width: 320px) {
+    .header-title {
+        font-size: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .service-card {
+        margin: 0;
+    }
+}
+
+/* Ajustes para altura muito pequena */
+@media (max-height: 600px) {
+    .hero {
+        min-height: auto;
+        padding: 5rem 1rem 3rem;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Melhorando performance em dispositivos com tela de alta densidade */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .carousel-image {
+        transform: translateZ(0);
+    }
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.carousel-images {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5); /* Overlay escuro para melhor legibilidade */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+/* Adicionando elementos visuais específicos para TEA */
+.puzzle-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path/to/puzzle-pattern.png');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Adicionando animações suaves para elementos interativos */
+.service-card, .btn-primary, .btn-secondary {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Adicionando elementos de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Melhorando contraste para leitura */
+.hero p {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Adicionando indicadores visuais para foco */
+:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Adaptando seção sobre para incluir certificações */
+.about-content li::before {
+    color: var(--primary);
+}
+
+/* Adicionando espaço para símbolos de comunicação alternativa */
+.communication-symbols {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilizando os cards de serviço para o novo tema */
+.service-card {
+    position: relative;
+    padding-top: 3.5rem;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.service-card.featured {
+    transform: none;
+    border: 1px solid rgba(255, 166, 0, 0.2);
+}
+
+.service-card.featured::before {
+    display: none;
+}
+
+.price-detail {
+    font-size: 0.9rem;
+    color: #28a745;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/* Ajustando o hover do card mensal */
+.service-card.featured:hover {
+    background-color: rgba(255, 166, 0, 0.02); /* Fundo laranja suave */
+    border-color: orange;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(255, 166, 0, 0.15);
+}
+
+/* Ajustando a transição para ser mais suave */
+.service-card {
+    transition: all 0.4s ease;
+}
+
+/* Mantendo o estilo base do card featured sem o badge */
+.service-card.featured {
+    border: 1px solid rgba(255, 166, 0, 0.2);
+}
+
+/* Ajustando o preço no hover */
+.service-card.featured:hover .price {
+    border-color: orange;
+    color: orange;
+}
+
+/* Ajustando o botão no hover */
+.service-card.featured:hover .select-service {
+    border-color: orange;
+    color: orange;
+}
+
+.service-card.featured:hover .select-service:hover {
+    background-color: orange;
+    color: white;
+}
+
+/* Estilos para a página Por que Acompanhar */
+.hero-mini {
+    background: linear-gradient(rgba(0,0,0,0.4), var(--overlay));
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 4rem;
+    position: relative;
+    background-color: var(--primary);
+}
+
+.hero-mini h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.content-container .reason-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.reason-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(124, 185, 232, 0.1);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+}
+
+.reason-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.reason-card h3 {
+    color: var(--dark-gray);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.reason-card p {
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.info-section {
+    background: var(--light-gray);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+}
+
+.info-section h2 {
+    color: var(--dark-gray);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-section li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    color: #555;
+}
+
+.info-section li::before {
+    content: '✓';
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsividade para a nova página */
+@media (max-width: 768px) {
+    .hero-mini {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .content-container {
+        padding: 0 1rem 3rem;
+    }
+
+    .reason-card {
+        padding: 1.5rem;
+    }
+
+    .info-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .content-container .reason-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-mini h1 {
+        font-size: 1.8rem;
+    }
+
+    .reason-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .reason-card p {
+        font-size: 0.9rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .info-section li {
+        font-size: 0.9rem;
+    }
+
+    .content-container .reason-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustes para a página Por que Acompanhar */
+.reason-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 2rem auto 4rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.reason-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(124, 185, 232, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(124, 185, 232, 0.2);
+}
+
+.reason-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.benefits-grid {
+    background: linear-gradient(135deg, var(--primary), var(--dark-primary));
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 2rem auto 4rem;
+    max-width: 1000px;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefits-list li {
+    color: var(--white);
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.benefits-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .reason-cards-container {
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+
+    .reason-card {
+        padding: 2rem;
+    }
+
+    .benefits-grid {
+        padding: 2rem;
+        margin: 2rem 1rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-list li {
+        font-size: 1rem;
+    }
+}
+
+/* Melhorias visuais */
+.reason-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reason-card:hover::after {
+    opacity: 1;
+}
+
+/* Animação suave ao scroll */
+.reason-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste do delay para cada card */
+.reason-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.reason-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.reason-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Ajustando o hero para mobile */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+        padding: 4rem 1rem 2rem;
+    }
+}
+
+/* Otimização de animações */
+@media (prefers-reduced-motion: no-preference) {
+    .service-card, 
+    .btn-primary,
+    .reason-card {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+}
+
+/* Desativar animações se usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Layout mais responsivo */
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* Melhorar foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Melhorar legibilidade */
+p, li {
+    max-width: 70ch;
+    line-height: 1.6;
+}
+
+/* Otimizar carregamento de imagens */
+.carousel-image {
+    will-change: opacity;
+    content-visibility: auto;
+}
+
+/* Melhorar performance em dispositivos móveis */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .carousel-image {
+        transform: translateZ(0);
+    }
+}
+
+/* Ajustes de layout unificados */
+.content-container {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+    padding: clamp(1rem, 5vw, 3rem);
+}
+
+/* Seção Sobre Mim */
+.about-section {
+    padding: 5rem 8%;
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Layout para desktop: foto + texto */
+    gap: 4rem;
+    align-items: start;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    object-fit: cover;
+    position: relative;
+}
+
+.about-content {
+    padding-right: 2rem;
+}
+
+.about-content h2 {
+    margin-top: 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 2rem;
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 1rem; /* Centraliza a imagem e adiciona espaço abaixo */
+        display: block; /* Garante que a margem auto funcione */
+    }
+
+    .about-content {
+        padding: 0;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+        margin: 1rem 0 1.5rem;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+    .about-section {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Estilização do Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary), var(--dark-primary));
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    margin: 0.3rem auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+footer a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+/* Melhorando o visual dos links sociais */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Ajustes responsivos do footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem;
+    }
+
+    .footer-content {
+        gap: 0.5rem;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+
+    .social-link {
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Estilização do Formulário de Agendamento */
+.booking-form {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    max-width: 600px;
+    margin: 3rem auto;
+    width: 100%;
+}
+
+.booking-form h3 {
+    color: var(--dark-gray);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.booking-form h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--primary);
+    margin: 1rem auto;
+}
+
+.selected-service-info {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 500;
+    padding: 1rem;
+    margin: 1rem 0 2rem;
+    border-bottom: 1px solid var(--light-primary);
+    font-size: 1.1rem;
+}
+
+/* Ajustes responsivos para o formulário */
+@media (max-width: 768px) {
+    .booking-form {
+        margin: 2rem 0.5rem;
+        padding: 1.5rem 1rem;
+        width: calc(100% - 1rem);
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .btn-primary {
+        width: 100%;
+        white-space: normal;
+        padding: 12px 20px;
+    }
+
+    .selected-service-info {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        white-space: normal;
+    }
+
+    .consent-text {
+        font-size: 0.8rem;
+        padding: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media (max-width: 360px) {
+    .booking-form {
+        padding: 1rem 0.8rem;
+        margin: 1rem 0.3rem;
+    }
+
+    .booking-form h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+        white-space: normal;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+        margin: 2rem auto;
+    }
+
+    .service-card {
+        margin: 0;
+        padding: 2rem 1.5rem;
+        width: 100%;
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        white-space: normal;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        white-space: normal;
+    }
+
+    .price {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    .price-detail {
+        font-size: 0.9rem;
+        margin: 0.5rem 0 1rem;
+    }
+
+    .select-service {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+        white-space: normal;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+    .services-container {
+        padding: 2rem 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .price {
+        font-size: 1.6rem;
+    }
+
+    .select-service {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Ajustes para a seção de benefícios */
+.benefits-grid {
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.benefits-list {
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        padding: 1.5rem;
+        margin: 1.5rem 0.5rem;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-list li {
+        font-size: 0.95rem;
+        padding: 0.5rem 0 0.5rem 1.8rem;
+        white-space: normal;
+    }
+}
