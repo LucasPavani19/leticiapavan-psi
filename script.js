@@ -1,6 +1,6 @@
 // Inicialização do EmailJS
 (function() {
-    emailjs.init("afwYf6RRsIfuFTf3U");
+    emailjs.init("JxP5eK-blb22088E5");
 })();
 
 // Carrossel de imagens
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const whatsapp = document.getElementById('whatsapp').value;
             const service = selectedServiceSpan.textContent;
 
+            // Validações
             if (!/^[0-9]{11}$/.test(whatsapp)) {
                 alert('Por favor, insira um número de WhatsApp válido');
                 return;
@@ -67,23 +68,58 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Preparar mensagem para WhatsApp
-            const message = encodeURIComponent(
+            // Preparar link do WhatsApp
+            const whatsappMessage = encodeURIComponent(
                 `Olá! Gostaria de agendar um horário.\n\n` +
                 `Nome: ${name}\n` +
                 `Tratamento: ${service}\n`
             );
-            
-            // Abrir WhatsApp (substitua pelo número correto)
-            window.open(`https://wa.me/5565999417801?text=${message}`);
-            
-            // Limpar formulário
-            appointmentForm.reset();
-            bookingForm.style.display = 'none';
-            serviceCards.forEach(c => c.classList.remove('selected'));
+            const whatsappLink = `https://wa.me/5565999417801?text=${whatsappMessage}`;
+
+            // Enviar email usando EmailJS
+            emailjs.send("service_n0321ef", "template_1u6f2vr", {
+                from_name: name,
+                service: service,
+                whatsapp: whatsapp,
+                whatsapp_link: whatsappLink
+            })
+            .then(
+                function(response) {
+                    console.log("EMAIL ENVIADO", response);
+                    // Redirecionar para WhatsApp
+                    window.open(whatsappLink);
+                    
+                    // Limpar formulário
+                    appointmentForm.reset();
+                    bookingForm.style.display = 'none';
+                    serviceCards.forEach(c => c.classList.remove('selected'));
+                },
+                function(error) {
+                    console.log("ERRO NO EMAIL", error);
+                    alert("Houve um erro ao processar sua solicitação. Por favor, tente novamente.");
+                }
+            );
         });
     }
 
     // Iniciar carrossel
     window.addEventListener('load', startCarousel);
-}); 
+});
+
+// Para enviar o email:
+emailjs.send("service_n0321ef", "template_1u6f2vr", {
+    to_email: "psicologaleticiapavan@gmail.com",
+    from_name: name,
+    from_email: email,
+    message: message
+})
+.then(
+    function(response) {
+        console.log("SUCCESS", response);
+        alert("Email enviado com sucesso! Você será respondido(a) em breve.");
+    },
+    function(error) {
+        console.log("FAILED", error);
+        alert("Erro ao enviar email. Tente novamente.");
+    }
+); 
