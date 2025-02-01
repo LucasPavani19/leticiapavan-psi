@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookingForm = document.getElementById('bookingForm');
     const selectedServiceSpan = document.getElementById('selectedService');
     const appointmentForm = document.getElementById('appointmentForm');
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
     // Esconder formulário inicialmente
     if (bookingForm) {
@@ -110,6 +111,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Iniciar carrossel
     window.addEventListener('load', startCarousel);
+
+    // Verificar se há preferência salva
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        darkModeToggle.textContent = savedTheme === 'dark' ? '🌞' : '🌓';
+    }
+    
+    // Alternar tema
+    darkModeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Atualizar ícone do botão
+        darkModeToggle.textContent = newTheme === 'dark' ? '🌞' : '🌓';
+    });
 });
 
 // Para enviar o email:
