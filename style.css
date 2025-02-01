@@ -1584,27 +1584,22 @@ footer a:hover {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
 #darkModeToggle:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] #darkModeToggle {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] #darkModeToggle:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Ajustes para o tema escuro */
