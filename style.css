@@ -10,6 +10,18 @@
     --overlay: rgba(0, 0, 0, 0.5);
     scroll-padding-top: 120px; /* Aumenta o espaço do scroll ao clicar nos links */
     scroll-behavior: smooth; /* Garante scroll suave */
+    
+    /* Variáveis para o tema claro (padrão) */
+    --background: #FFFFFF;
+    --text-color: #333333;
+    --card-bg: #FFFFFF;
+}
+
+/* Variáveis para o tema escuro */
+[data-theme="dark"] {
+    --background: #000000;
+    --text-color: #FFFFFF;
+    --card-bg: #121212;
 }
 
 * {
@@ -21,8 +33,8 @@
 
 body {
     line-height: 1.6;
-    color: var(--dark-gray);
-    background-color: var(--white);
+    color: var(--text-color);
+    background-color: var(--background);
 }
 
 /* Header com layout vertical centralizado */
@@ -31,7 +43,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--white);
+    background-color: var(--background);
     padding: 0.8rem 5%;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -52,7 +64,7 @@ header {
     font-weight: 200;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--dark-gray);
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -73,7 +85,7 @@ nav ul {
 }
 
 nav a {
-    color: var(--dark-gray);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -124,7 +136,7 @@ nav a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--white);
+    color: var(--white) !important;
     position: relative;
 }
 
@@ -220,7 +232,7 @@ nav a {
 
 .section-title {
     text-align: center;
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-size: 2.5rem;
     margin-bottom: 3rem;
     font-weight: 400;
@@ -255,13 +267,14 @@ nav a {
     justify-content: space-between;
     height: 100%;
     padding: 3rem 2rem;
-    background: var(--white);
+    background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(124, 185, 232, 0.1);
+    color: var(--text-color);
 }
 
 .service-card:hover {
@@ -273,7 +286,7 @@ nav a {
 .service-card h3 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-size: 1.6rem;
     position: relative;
     padding-bottom: 15px;
@@ -305,11 +318,6 @@ nav a {
     text-align: center;
 }
 
-.price-detail {
-    color: #28a745;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
 
 .select-service {
     padding: 12px 30px;
@@ -321,7 +329,7 @@ nav a {
     font-size: 1rem;
     border: none;
     background-color: var(--primary);
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .select-service:hover {
@@ -381,7 +389,7 @@ nav a {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -739,55 +747,25 @@ nav a {
     max-width: 800px;
 }
 
-/* Adicionando elementos visuais específicos para TEA */
-.puzzle-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('path/to/puzzle-pattern.png');
-    opacity: 0.05;
-    pointer-events: none;
-}
-
 /* Adicionando animações suaves para elementos interativos */
 .service-card, .btn-primary, .btn-secondary {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Adicionando elementos de acessibilidade */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+
 
 /* Melhorando contraste para leitura */
 .hero p {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Adicionando indicadores visuais para foco */
-:focus {
-    outline: 3px solid var(--primary);
-    outline-offset: 2px;
-}
 
 /* Adaptando seção sobre para incluir certificações */
 .about-content li::before {
     color: var(--primary);
 }
 
-/* Adicionando espaço para símbolos de comunicação alternativa */
-.communication-symbols {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 
 /* Estilizando os cards de serviço para o novo tema */
 .service-card {
@@ -892,7 +870,7 @@ nav a {
 }
 
 .reason-card {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -912,7 +890,7 @@ nav a {
 }
 
 .reason-card h3 {
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-size: 1.4rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -932,7 +910,7 @@ nav a {
 }
 
 .info-section h2 {
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -1022,7 +1000,7 @@ nav a {
 }
 
 .reason-card {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.1);
@@ -1218,7 +1196,7 @@ p, li {
     grid-template-columns: 300px 1fr; /* Layout para desktop: foto + texto */
     gap: 4rem;
     align-items: start;
-    background: var(--white);
+    background-color: var(--card-bg);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     margin: 2rem auto;
@@ -1399,7 +1377,7 @@ footer a:hover {
 /* Estilização do Formulário de Agendamento */
 .booking-form {
     display: none;
-    background: var(--white);
+    background-color: var(--card-bg);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     padding: 2.5rem;
@@ -1409,7 +1387,7 @@ footer a:hover {
 }
 
 .booking-form h3 {
-    color: var(--dark-gray);
+    color: var(--text-color);
     font-size: 1.8rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -1591,4 +1569,111 @@ footer a:hover {
         padding: 0.5rem 0 0.5rem 1.8rem;
         white-space: normal;
     }
+}
+
+/* Estilos para o botão de acessibilidade */
+.accessibility-button {
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    z-index: 1001;
+}
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] #darkModeToggle {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] #darkModeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ajustes para o tema escuro */
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--background);
+}
+
+.header-title {
+    color: var(--text-color);
+}
+
+nav a {
+    color: var(--text-color);
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.about-section {
+    background-color: var(--card-bg);
+}
+
+.about-content h2,
+.about-content p {
+    color: var(--text-color);
+}
+
+.reason-card {
+    background-color: var(--card-bg);
+}
+
+.reason-card h3,
+.reason-card p {
+    color: var(--text-color);
+}
+
+.booking-form {
+    background-color: var(--card-bg);
+}
+
+.booking-form h3,
+.form-group label {
+    color: var(--text-color);
+}
+
+/* Não alterar o hero/carrossel */
+.hero,
+.hero h1,
+.hero p,
+.hero-content {
+    color: var(--white) !important;
+}
+
+/* Garantir que todos os textos do card fiquem com a cor correta no modo escuro */
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .reason-card p {
+    color: #B0B0B0;
+}
+
+/* Ajustar cor do preço e outros textos do card no modo escuro */
+[data-theme="dark"] .price,
+[data-theme="dark"] .price-detail,
+[data-theme="dark"] .consent-text {
+    color: var(--text-color);
 }
