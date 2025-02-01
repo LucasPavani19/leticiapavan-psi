@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedServiceSpan = document.getElementById('selectedService');
     const appointmentForm = document.getElementById('appointmentForm');
 
+    // Esconder formulário inicialmente
+    if (bookingForm) {
+        bookingForm.style.display = 'none';
+    }
+
     // Selecionar serviço
     serviceCards.forEach(card => {
         const selectButton = card.querySelector('.select-service');
@@ -41,10 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedServiceSpan.textContent = `${serviceName} - R$ ${servicePrice}`;
             
             // Mostra o formulário
-            bookingForm.style.display = 'block';
-            
-            // Scroll suave até o formulário
-            bookingForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (bookingForm) {
+                bookingForm.style.display = 'block';
+                // Scroll suave até o formulário
+                bookingForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     });
 
