@@ -308,18 +308,13 @@ nav a {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 40px;
     height: 2px;
     background-color: var(--primary);
 }
 
-.service-card p {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #555;
-    font-size: 1rem;
-}
 
 .price {
     font-size: 2rem;
@@ -1678,5 +1673,76 @@ footer a:hover {
     [data-theme="dark"] .price-detail,
     [data-theme="dark"] .consent-text {
         color: var(--text-color);
+    }
+}
+
+/* Estilos para a seção de localização */
+.location-section {
+    padding: 3rem 8%;
+    text-align: center;
+    background-color: var(--card-bg);
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-content h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.location-content p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.location-icon {
+    font-size: 1.5rem;
+}
+
+.map-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    background-color: var(--dark-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(91, 155, 213, 0.3);
+}
+
+/* Ajustes responsivos para a seção de localização */
+@media (max-width: 768px) {
+    .location-section {
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+
+    .location-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .location-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
