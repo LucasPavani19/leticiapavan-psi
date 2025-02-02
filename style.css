@@ -32,6 +32,11 @@
     --background: #000000;
     --text-color: #FFFFFF;
     --card-bg: #121212;
+
+    /* Garantir que o texto de consentimento fique branco no modo escuro */
+    .consent-text {
+        color: #FFFFFF;
+    }
 }
 
 /* ========================= */
