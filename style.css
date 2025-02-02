@@ -1670,7 +1670,7 @@ footer a:hover {
     /* Garantir que todos os textos do card fiquem com a cor correta no modo escuro */
     [data-theme="dark"] .service-card p,
     [data-theme="dark"] .reason-card p {
-        color: #B0B0B0;
+        color: #ffffff;
     }
 
     /* Ajustar cor do preço e outros textos do card no modo escuro */
