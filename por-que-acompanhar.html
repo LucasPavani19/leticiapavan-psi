@@ -13,11 +13,13 @@
 </head>
 <body>
     <header>
-        <div class="accessibility-button">
-            <button id="darkModeToggle" aria-label="Alternar modo escuro">
-                🌓
-            </button>
-        </div>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="switch-icons">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+            </span>
+        </label>
         <h1 class="header-title">Psicóloga Letícia Pavan</h1>
         <nav>
             <ul>
@@ -163,5 +165,6 @@
        })();
     </script>
     <script src="script.js?v=1.0.1"></script>
+    <script src="theme.js"></script>
 </body>
 </html> 

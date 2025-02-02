@@ -1916,3 +1916,67 @@ footer a:hover {
         padding-bottom: 75%; /* Proporção mais quadrada para mobile */
     }
 }
+
+/* Switch do tema */
+.theme-switch {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f4;
+    border-radius: 30px;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    border: 1px solid #ddd;
+}
+
+.switch-icons::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.sun, .moon {
+    font-size: 11px;
+    line-height: 1;
+    z-index: 1;
+}
+
+/* Estado ativo do switch */
+.theme-switch input:checked + .switch-icons::before {
+    transform: translateX(16px);
+}
+
+.theme-switch input:checked + .switch-icons {
+    background-color: #2c3e50;
+}
