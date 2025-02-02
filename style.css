@@ -1,4 +1,6 @@
-/* Variáveis otimizadas para acessibilidade */
+/* ========================= */
+/* Variáveis de Cores       */
+/* ========================= */
 :root {
     --primary: #5B9BD5;    /* Azul mais acessível */
     --light-primary: #B8E2F2;
@@ -24,6 +26,9 @@
     --card-bg: #121212;
 }
 
+/* ========================= */
+/* Estilos Globais          */
+/* ========================= */
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +42,9 @@ body {
     background-color: var(--background);
 }
 
-/* Header com layout vertical centralizado */
+/* ========================= */
+/* Estilos do Header        */
+/* ========================= */
 header {
     position: fixed;
     top: 0;
@@ -53,7 +60,6 @@ header {
     width: 100%;
 }
 
-/* Adicionar estilo para o título do header */
 .header-title {
     font-size: 1.8rem;
     font-weight: 200;
@@ -63,7 +69,9 @@ header {
     margin: 0;
 }
 
-/* Ajustar navegação */
+/* ========================= */
+/* Estilos de Navegação     */
+/* ========================= */
 nav {
     width: 100%;
     display: flex;
@@ -118,7 +126,9 @@ nav a {
     }
 }
 
-/* Seção Hero */
+/* ========================= */
+/* Estilos do Hero         */
+/* ========================= */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.4), var(--overlay)), url('path/to/hero-image.jpg');
     background-size: cover;
@@ -143,6 +153,11 @@ nav a {
     right: 0;
     height: 150px;
     background: linear-gradient(transparent, var(--white));
+}
+
+/* Adicione esta regra para o modo escuro */
+[data-theme="dark"] .hero::before {
+    background: linear-gradient(transparent, var(--background));
 }
 
 .hero h1 {
@@ -220,7 +235,9 @@ nav a {
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* Seção Serviços */
+/* ========================= */
+/* Estilos de Seções       */
+/* ========================= */
 .services-container {
     padding: 5rem 8%;
 }
@@ -291,8 +308,7 @@ nav a {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 40px;
     height: 2px;
     background-color: var(--primary);
@@ -313,7 +329,6 @@ nav a {
     width: 100%;
     text-align: center;
 }
-
 
 .select-service {
     padding: 12px 30px;
@@ -748,20 +763,15 @@ nav a {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-
 /* Melhorando contraste para leitura */
 .hero p {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-
 /* Adaptando seção sobre para incluir certificações */
 .about-content li::before {
     color: var(--primary);
 }
-
-
 
 /* Estilizando os cards de serviço para o novo tema */
 .service-card {
@@ -1603,73 +1613,70 @@ footer a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Ajustes para o tema escuro */
-body {
-    background-color: var(--background);
-    color: var(--text-color);
-}
+/* ========================= */
+/* Estilos para o Modo Escuro */
+/* ========================= */
+[data-theme="dark"] {
+    /* Estilos específicos para o modo escuro */
+    body {
+        background-color: var(--background);
+        color: var(--text-color);
+    }
 
-header {
-    background-color: var(--background);
-}
+    header {
+        background-color: var(--background);
+    }
 
-.header-title {
-    color: var(--text-color);
-}
+    .header-title {
+        color: var(--text-color);
+    }
 
-nav a {
-    color: var(--text-color);
-}
+    nav a {
+        color: var(--text-color);
+    }
 
-.service-card {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-}
+    .service-card {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+    }
 
-.about-section {
-    background-color: var(--card-bg);
-}
+    .about-section {
+        background-color: var(--card-bg);
+    }
 
-.about-content h2,
-.about-content p {
-    color: var(--text-color);
-}
+    .about-content h2,
+    .about-content p {
+        color: var(--text-color);
+    }
 
-.reason-card {
-    background-color: var(--card-bg);
-}
+    .reason-card {
+        background-color: var(--card-bg);
+    }
 
-.reason-card h3,
-.reason-card p {
-    color: var(--text-color);
-}
+    .reason-card h3,
+    .reason-card p {
+        color: var(--text-color);
+    }
 
-.booking-form {
-    background-color: var(--card-bg);
-}
+    .booking-form {
+        background-color: var(--card-bg);
+    }
 
-.booking-form h3,
-.form-group label {
-    color: var(--text-color);
-}
+    .booking-form h3,
+    .form-group label {
+        color: var(--text-color);
+    }
 
-/* Não alterar o hero/carrossel */
-.hero,
-.hero h1,
-.hero p,
-.hero-content {
-    color: var(--white) !important;
-}
+    /* Garantir que todos os textos do card fiquem com a cor correta no modo escuro */
+    [data-theme="dark"] .service-card p,
+    [data-theme="dark"] .reason-card p {
+        color: #B0B0B0;
+    }
 
-/* Garantir que todos os textos do card fiquem com a cor correta no modo escuro */
-[data-theme="dark"] .service-card p,
-[data-theme="dark"] .reason-card p {
-    color: #B0B0B0;
-}
-
-/* Ajustar cor do preço e outros textos do card no modo escuro */
-[data-theme="dark"] .price,
-[data-theme="dark"] .price-detail,
-[data-theme="dark"] .consent-text {
-    color: var(--text-color);
+    /* Ajustar cor do preço e outros textos do card no modo escuro */
+    [data-theme="dark"] .price,
+    [data-theme="dark"] .price-detail,
+    [data-theme="dark"] .consent-text {
+        color: var(--text-color);
+    }
 }
