@@ -1591,11 +1591,16 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: none;
+    outline: none;
 }
 
 #darkModeToggle:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+}
+
+#darkModeToggle:focus {
+    outline: none;
 }
 
 [data-theme="dark"] #darkModeToggle:hover {
