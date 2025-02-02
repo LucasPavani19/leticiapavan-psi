@@ -1575,29 +1575,22 @@ footer a:hover {
 /* Estilos para o botão de acessibilidade */
 .accessibility-button {
     position: fixed;
-    top: 2rem;
+    top: 50%; /* Centraliza verticalmente */
     left: 1rem;
     z-index: 1001;
+    transform: translateY(-50%); /* Ajusta para centralizar */
 }
 
 #darkModeToggle {
-    background: none;
-    border: none;
+    border: none; /* Remove a borda */
     font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0;
-    border-radius: 50%;
     width: 40px;
-    height: 40px;
+    height: 40px; /* Ajuste a altura para um tamanho mais apropriado */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: none;
-    outline: none;
-}
-
-#darkModeToggle:hover {
-    background-color: transparent;
+    background: none; /* Remove qualquer fundo */
+    outline: none; /* Remove o contorno ao clicar */
 }
 
 #darkModeToggle:focus {
