@@ -43,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Atualiza informações do formulário
             const serviceName = card.getAttribute('data-service');
-            const servicePrice = card.getAttribute('data-price');
-            selectedServiceSpan.textContent = `${serviceName} - R$ ${servicePrice}`;
+            selectedServiceSpan.textContent = serviceName;
             
             // Mostra o formulário
             if (bookingForm) {

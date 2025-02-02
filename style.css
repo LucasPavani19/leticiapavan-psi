@@ -53,11 +53,6 @@ header {
     width: 100%;
 }
 
-/* Remover estilos da logo */
-.logo-placeholder, .logo-image {
-    display: none;
-}
-
 /* Adicionar estilo para o título do header */
 .header-title {
     font-size: 1.8rem;
@@ -421,7 +416,7 @@ nav a {
 
 .booking-form.active {
     display: block;
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 0.1s ease forwards;
 }
 
 /* Responsivo */
