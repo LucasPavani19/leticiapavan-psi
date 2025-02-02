@@ -142,7 +142,7 @@ nav a {
     left: 0;
     right: 0;
     height: 150px;
-    background: linear-gradient(transparent, var(--white));
+    background: linear-gradient(transparent, var(--background));
 }
 
 .hero h1 {
